@@ -1,0 +1,162 @@
+ .navbar {
+     @include flex-row;
+     justify-content: space-between;
+     position: fixed;
+     align-items: center;
+     height: 8vh;
+     z-index: 2;
+     top: 0;
+     left: 0;
+     right: 0;
+     padding: 2em 4em;
+     transition: $transition;
+
+     //  overflow: hidden;
+     &.animate {
+         background-color: color(black);
+
+     }
+
+     .logo {
+         color: black;
+         text-transform: uppercase;
+         letter-spacing: .3125rem;
+         font-size: 1.25rem;
+
+         img {
+             max-width: 3em;
+         }
+     }
+
+     .nav-links {
+         @include flex-column;
+         justify-content: space-around;
+         position: absolute;
+         background-color: color(black);
+         top: 0;
+         left: 0;
+         height: 100vh;
+         width: 100vw;
+         align-items: center;
+         flex-direction: column;
+         clip-path: circle(1% at 100% 0%);
+         transition: all 1s ease-out;
+         list-style: none;
+         z-index: 2;
+         pointer-events: none;
+
+         @include tablet {
+             background-color: rgba(255, 255, 255, 0);
+         }
+
+         &.nav-active {
+             clip-path: circle(200% at 100% 0%);
+             pointer-events: all
+         }
+
+         li {
+             opacity: 0;
+
+             a {
+                 color: color(white-darkest);
+                 text-decoration: none;
+                 letter-spacing: .1rem;
+                 font-size: 1rem;
+                 transition: $transition;
+
+                 @include tablet {
+                     font-size: .875rem
+                 }
+
+                 &:hover {
+                     color: color(white-darker);
+                 }
+             }
+
+
+
+             @include tablet {
+                 opacity: 1;
+             }
+
+             &.keranjang {
+                 position: relative;
+
+                 i {
+                     color: color(black-lighter);
+                     //  margin-right: 1em;
+                 }
+
+                 .angka {
+                     font-size: .6rem;
+                     position: absolute;
+                     left: 1em;
+                     bottom: -.5em;
+                     padding: .2em .4em;
+                     color: color(black);
+                     background-color: hsl(0, 0%, 77%);
+                     border-radius: 50%;
+                 }
+             }
+         }
+
+         @include tablet {
+             pointer-events: all;
+             flex-direction: row;
+             position: static;
+             clip-path: circle(1500px at 90% -10%);
+             width: 70%;
+             height: 100%;
+         }
+
+         @include pc {
+             width: 50%;
+
+         }
+     }
+
+     .burger {
+         display: block;
+         cursor: pointer;
+         z-index: 3;
+
+         div {
+             width: 1.875em;
+             height: .1875em;
+             background-color: color(black);
+             margin: .3125em;
+             transition: .3s ease
+         }
+
+         @include tablet {
+             display: none;
+         }
+     }
+
+
+
+ }
+
+ .toggle-burger .line1 {
+     animation: line1animation 1s forwards cubic-bezier(.68, -.55, .265, 1.55)
+ }
+
+ .toggle-burger .line2 {
+     animation: line2animation 1s forwards cubic-bezier(0.075, 0.82, 0.165, 1);
+ }
+
+ .toggle-burger .line3 {
+     animation: line3animation 1s forwards cubic-bezier(.77, 0, .175, 1)
+ }
+
+ .toggle-burger2 .line1 {
+     animation: line1animation2 1s forwards cubic-bezier(.68, -.55, .265, 1.55)
+ }
+
+ .toggle-burger2 .line2 {
+     animation: line2animation2 1s forwards cubic-bezier(0.6, 0.04, 0.98, 0.335);
+ }
+
+ .toggle-burger2 .line3 {
+     animation: line3animation2 1s forwards cubic-bezier(.77, 0, .175, 1)
+ }

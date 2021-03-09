@@ -1,0 +1,109 @@
+.footer {
+    @include flex-column;
+    justify-content: space-evenly;
+    background-color: color(black);
+    padding: 2em;
+
+
+    @include tablet {
+        @include flex-row;
+        align-items: flex-start;
+        padding: 3em;
+    }
+
+    .knavigasi {
+        @include flex-column;
+        width: 100%;
+        align-items: flex-start;
+        margin-bottom: 2em;
+
+        @include tablet {
+            width: 30%;
+            margin-bottom: 0em;
+        }
+
+        .judul {
+            font-weight: 600;
+            color: color(white-dark);
+            font-size: 1.4em;
+            margin-bottom: 1em;
+            transition: $transition-slower;
+        }
+
+        .nav-links {
+            list-style: none;
+            transition: $transition-slower;
+
+            li {
+                margin-bottom: .5em;
+
+                a {
+                    color: color(white-dark);
+                    text-decoration: none
+                }
+            }
+        }
+    }
+
+    .kkontak {
+        @include flex-column;
+        align-items: flex-start;
+        width: 100%;
+        margin-bottom: 2em;
+        transition: $transition-slower;
+
+
+        @include tablet {
+            width: 30%;
+            margin-bottom: 0em;
+        }
+
+        .judul {
+            font-weight: 600;
+            color: color(white-dark);
+            font-size: 1.4em;
+            margin-bottom: 1em;
+            transition: $transition-slower;
+        }
+
+        .teks {
+            color: color(white-dark);
+            transition: $transition-slower;
+        }
+    }
+
+    .ksosial {
+        @include flex-column;
+        width: 100%;
+        transition: $transition-slower;
+
+
+        @include tablet {
+            width: 30%;
+        }
+
+        .logo {
+            max-width: 40%;
+            margin-bottom: 2em;
+            transition: $transition-slower;
+
+            @include tablet {
+                max-width: 30%;
+
+            }
+        }
+
+        .icon-social {
+            @include flex-row;
+            justify-content: space-evenly;
+            font-size: 2em;
+            color: color(white-dark);
+            transition: $transition-slower;
+
+
+            i {
+                margin: 0 .5em;
+            }
+        }
+    }
+}

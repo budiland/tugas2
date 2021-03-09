@@ -1,0 +1,56 @@
+.section-tabel {
+    position: relative;
+    background-color: color(black-dark);
+    height: 100vh;
+    @include flex-column;
+    justify-content: space-evenly;
+
+    @include tablet {
+        @include flex-row;
+        justify-content: space-evenly;
+    }
+
+    .background {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        opacity: .2;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .field-teks {
+        z-index: 1;
+        background-color: hsla(0, 0%, 20%, 0.618);
+        width: 70vw;
+        @include flex-column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2em;
+        transition: $transition-slowest;
+        box-shadow: .5em .5em .7em color(black);
+
+        .judul {
+            align-self: center;
+            font-size: 3rem;
+            color: color(white-darkest);
+            margin-bottom: .6em;
+        }
+
+        .tabel {
+            background-color: hsla(0, 0%, 20%, 0.618);
+            margin-bottom: 1em;
+
+            caption {
+                color: color(black-lightest);
+                margin-bottom: .2em;
+            }
+
+            & th,
+            & td {
+                border: 1px solid black;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.section-home {
+    position: relative;
+    background-color: color(black-dark);
+    height: 100vh;
+    @include flex-column;
+    justify-content: space-evenly;
+
+    @include tablet {
+        @include flex-row;
+        justify-content: space-evenly;
+    }
+
+    .background {
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        opacity: .2;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .field-gambar {
+        transition: $transition-slowest;
+
+        .gambar {
+            max-width: 70vw;
+            opacity: .7;
+
+            @include tablet {
+                max-width: 30vw;
+            }
+        }
+
+        z-index: 1;
+
+    }
+
+    .field-teks {
+        z-index: 1;
+        background-color: hsla(0, 0%, 20%, 0.618);
+        width: 40vw;
+        @include flex-column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 2em;
+        border: 1px solid black;
+        transition: $transition-slowest;
+        box-shadow: .5em .5em .7em color(black);
+
+        .judul {
+            align-self: center;
+            font-size: 3rem;
+            color: color(white-darkest);
+        }
+
+
+
+        .teks {
+            .foto {
+                margin: .4em;
+                float: right;
+                border: 2px solid black;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.btnup {
+    display: block;
+    transition: $transition-fast;
+    opacity: 0;
+    position: fixed;
+    right: 140px;
+    bottom: 100px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: color(satu);
+    color: color(white);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    // box-shadow: -6px 6px 10px color(satu-lightest);
+    pointer-events: none;
+
+    @include tablet {
+        bottom: 50px;
+        right: 30px;
+    }
+
+    &:hover {
+        background-color: color(satu-darker);
+        /* Add a dark-grey background on hover */
+    }
+
+    &_nav-active {
+        pointer-events: none;
+        display: none;
+    }
+
+    &_scroll {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
